@@ -5,6 +5,8 @@
             useUTC: false
         }
     });
+    var sensorsService = getSensorsService();
+    var readingsService = getReadingsService();
     //get all the sensors from the database, then establish signalr connection
     $.get(sensorsApiUrl,
         function (sensors) {
