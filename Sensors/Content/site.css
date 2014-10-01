@@ -1,9 +1,5 @@
 ﻿/*Variables*/
 /*Mixins*/
-/*Bootstrap Overrides*/
-.navbar {
-  margin-bottom: 0;
-}
 /*Element Styles*/
 html,
 body {
@@ -11,16 +7,21 @@ body {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  color: #222222;
-  background: #efefef;
+  background-color: #d3d3d3;
+  background-image: url(Images/classy-fabric.png);
   height: 100%;
   font-size: 1rem;
 }
-/*Class Styles*/
+h1 {
+  font-size: 48px;
+  text-align: center;
+  margin: 20px 0 40px 0;
+  color: #012e78;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px #d3d3d3;
+}
+/*Id & Class Styles*/
 .main-container {
-  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
   -webkit-border-top-right-radius: 0;
   -webkit-border-bottom-right-radius: 5px;
   -webkit-border-bottom-left-radius: 5px;
@@ -38,9 +39,41 @@ body {
   background-clip: padding-box;
   background: #fefefe;
   min-height: calc((100%) - 100px);
-  border: thin solid #666666;
   border-top-width: 0;
   padding-top: 20px;
   padding-bottom: 20px;
+}
+#loader {
+  min-height: 64px;
+  min-width: 64px;
+  max-height: 64px;
+  max-width: 64px;
+  background-image: url(Images/ajax-loader.gif);
+  background-repeat: no-repeat;
+  margin: auto;
+  background-size: contain;
+}
+.card {
+  -webkit-box-shadow: 0 2px 3px 2px #d3d3d3;
+  -moz-box-shadow: 0 2px 3px 2px #d3d3d3;
+  box-shadow: 0 2px 3px 2px #d3d3d3;
+  padding: 5px 0 5px 0;
+  margin-bottom: 10px;
+  background-color: #d3d3d3;
+  background-image: url(Images/classy-fabric.png);
+}
+.card.high {
+  background-color: #009900;
+}
+.card.medium {
+  background-color: #ffff00;
+}
+.card.low {
+  background-color: #ff3300;
+}
+.big-number {
+  background: #fefefe;
+  text-align: center;
+  font-weight: bold;
 }
 /*# sourceMappingURL=site.css.map */

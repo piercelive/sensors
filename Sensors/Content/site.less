@@ -1,10 +1,15 @@
 ﻿/*Variables*/
+@heading-color: #012e78 ;
 @text-color: #222;
-@light-gray: #efefef;
+@light-gray: lightgray;
 @dark-gray: #666;
 @off-white: #fefefe;
+@high-color: #009900;
+@medium-color: #ffff00;
+@low-color: #ff3300;
 @background-color: @light-gray;
-@shadow-color: @dark-gray;
+@body-background: @off-white;
+@shadow-color: @light-gray;
 
 /*Mixins*/
 .rounded(@radius: 2px) {
@@ -62,12 +67,6 @@
   filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@stop,@start));
 }
 
-.drop-shadow(@x-axis: 0, @y-axis: 1px, @blur: 2px, @stretch: 0, @alpha: 0.1) {
-  -webkit-box-shadow: @x-axis @y-axis @blur @stretch rgba(0, 0, 0, @alpha);
-  -moz-box-shadow: @x-axis @y-axis @blur @stretch rgba(0, 0, 0, @alpha);
-  box-shadow: @x-axis @y-axis @blur @stretch rgba(0, 0, 0, @alpha);
-}
-
 
 .btn-custom(@start: @secondary-color, @end: @dark-secondary, @textColor: #fff ) {
  background-color: darken(@end, 3%) !important;
@@ -86,30 +85,63 @@
 }
 
 
-
-
-/*Bootstrap Overrides*/
-.navbar{
-    margin-bottom:0;
+.subtle-pattern(@color: @background-color){    
+    background-color: @color;
+    background-image: url(Images/classy-fabric.png);
 }
 
 /*Element Styles*/
 html, body {
     .box-sizing;
-    color:@text-color;
-    background:@background-color;
+    .subtle-pattern;
     height:100%;
     font-size: 1rem;
 }
+h1{
+    font-size: 48px;
+    text-align:center;
+    margin: 20px 0 40px 0;
+    color: @heading-color;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px @light-gray;
+}
 
-/*Class Styles*/
+/*Id & Class Styles*/
 .main-container{
-    .drop-shadow;
     .border-radius(0,5px,5px,0);
-    background: @off-white;
+    background: @body-background;
     min-height: ~"calc((100%) - 100px)";
-    border: thin solid @shadow-color;
     border-top-width: 0;
     padding-top: 20px;
     padding-bottom: 20px;
+}
+#loader{
+    min-height:64px;
+    min-width: 64px;
+    max-height:64px;
+    max-width: 64px;
+    background-image: url(Images/ajax-loader.gif);
+    background-repeat: no-repeat;
+    margin: auto;
+    background-size: contain;
+}
+.card{
+    .box-shadow(0 2px 3px 2px @shadow-color);
+    padding: 5px 0 5px 0;
+    margin-bottom: 10px;
+    .subtle-pattern;
+    &.high{
+        background-color: @high-color;
+    }
+    &.medium{        
+        background-color: @medium-color;
+    }
+    &.low{        
+        background-color: @low-color;
+    }
+}
+.big-number{
+    background:@body-background;
+    text-align: center;
+    font-weight: bold;
 }

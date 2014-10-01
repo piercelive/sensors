@@ -48,7 +48,11 @@ namespace Sensors
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/sensors").Include(
+                        "~/Scripts/signalr.js",
                         "~/Scripts/mustache.js",
+                        "~/Scripts/sensorsConfig.js",
+                        "~/Scripts/sensorsService.js",
+                        "~/Scripts/readingsService.js",
                         "~/Scripts/sensors.js"));
         }
     }
