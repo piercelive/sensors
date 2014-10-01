@@ -48,6 +48,7 @@ namespace Sensors
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/sensors").Include(
+                        "~/Scripts/highcharts.js",
                         "~/Scripts/signalr.js",
                         "~/Scripts/mustache.js",
                         "~/Scripts/sensorsConfig.js",
